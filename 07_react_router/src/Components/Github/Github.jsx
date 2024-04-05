@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useLoaderData } from 'react-router-dom'
 
 function Github() {
-    // const data = useLoaderData()
+    const mydata = useLoaderData()
     const [data, setData] = useState([])
     useEffect(() => {
      fetch('https://api.github.com/users/hiteshchoudhary')
@@ -15,7 +15,8 @@ function Github() {
     
   return (
     <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl'>Github followers: {data.followers}
-    <img src={data.avatar_url} alt="Git picture" width={300} />
+    <img src={data.avatar_url} alt="Git picture" width={300} /> BIO:{data.bio}
+    <div>twitter:{data.twitter_url}</div>
     </div>
   )
 }
@@ -23,6 +24,6 @@ function Github() {
 export default Github
 
 export const githubInfoLoader = async () => {
-    const response = await fetch('https://api.github.com/users/hiteshchoudhary')
+    const response = await fetch('https://api.github.com/users/DUBEY-OM')
     return response.json()
 }

@@ -6,7 +6,7 @@ import Home from './Components/Home/Home.jsx'
 import About from './Components/About/About.jsx'
 import Contact from './Components/ContactUs/Contactme.jsx'
 import User from './Components/User/User.jsx'
-import Github from './Components/Github/Github.jsx'
+import Github,{githubInfoLoader }from './Components/Github/Github.jsx'
 import './index.css'
 import { Route, RouterProvider,createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 // const router=createBrowserRouter([{path:'/',element:<Layout/>,childern:[{path:"",element:<Home/>},{path:"/About",element:<About/>},{path:"/contact",element:<Contact/>}]}])
@@ -17,7 +17,8 @@ const router = createBrowserRouter(
       <Route path='about' element={<About />} />
       <Route path='contact' element={<Contact />} />
       <Route path='user/:userid' element={<User />} />
-      <Route path='github' element={<Github/>} />
+      <Route LOADER={githubInfoLoader }
+      path='github' element={<Github/>} />
    </Route>))
 
 ReactDOM.createRoot(document.getElementById('root')).render(
